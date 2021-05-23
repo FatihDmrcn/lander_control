@@ -1,0 +1,37 @@
+\section*{The Basic Model}
+\begin{equation*}
+    \frac{d^{2}}{dt^{2}}
+    \begin{bmatrix}
+        x\\
+        y\\
+        z\\
+        \alpha\\
+        \beta\\
+        \gamma\\
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0\\
+        0\\
+        -9.81\\
+        0\\
+        0\\
+        0\\
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        \frac{a}{m} & \frac{b}{m} & \frac{c}{m}\\
+        \frac{d}{m} & \frac{e}{m} & \frac{f}{m}\\
+        \frac{g}{m} & \frac{h}{m} & \frac{i}{m}\\
+        0 & \frac{2}{I \cdot l} & 0\\
+        \frac{2}{I \cdot l} & 0 & 0\\
+        0 & 0 & 0\\
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        F_{x}\\
+        F_{y}\\
+        F_{z}\\
+    \end{bmatrix}
+\end{equation*}
+

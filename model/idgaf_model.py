@@ -8,7 +8,6 @@ import PyQt5.QtCore as Qtc
 class IDGAF(Qtc.QObject):
 
     gravity = (0., 0., -9.81)
-    gravityl = (0., 0., -9.81, 0., 0., 0.)
 
     steps = Qtc.pyqtSignal(object, object, object, object)
     reset = Qtc.pyqtSignal(object, object, object)
@@ -34,13 +33,13 @@ class IDGAF(Qtc.QObject):
         self.u_0dot = []
         self.forces = []
 
-    def NewF(self, forces, u, v):
-        matrix_rot = (1 / self.mass) * R.from_euler('ZYX', [u[5], u[4], u[3]]).as_matrix()
+    def ODE(self, t, y, forces):
+        matrix_rot = (1 / self.mass) * R.from_euler('ZYX', [y[5], y[4], y[3]]).as_matrix()
         matrix_trq = - (self.length/(2 * self.inertia)) * np.array(((0, 1, 0), (1, 0, 0), (0, 0, 0)))
         A = np.vstack((matrix_rot, matrix_trq))
-        du_1dot = v
-        du_2dot = self.gravityl + np.dot(A, forces)
-        return du_1dot, du_2dot
+        dy_1dot = y[6:]
+        dy_2dot = np.array((0., 0., -9.81, 0., 0., 0.)) + np.dot(A, forces)
+        return dy_1dot, dy_2dot
 
     def F(self, forces, u_n):
         r = R.from_euler('ZYX', [u_n[5], u_n[4], u_n[3]])               # Roll, Pitch, Yaw
