@@ -19,6 +19,9 @@ class IDGAF(Qtc.QObject):
         self.radius = radius
         self.inertia = 0.25*self.mass*(self.radius**2 + (1/3)*self.length**2)
 
+        self.y0 = [0., 0., 300., 0., 0., 0., 0., 0., 0., 0., 0., 0.]
+        self.t = np.linspace(0, 20, 1001)
+
         self.F_total = 200.
         self.angle_max = np.pi/8
         self.F_orthogonal = self.F_total * np.sin(self.angle_max)
@@ -33,13 +36,14 @@ class IDGAF(Qtc.QObject):
         self.u_0dot = []
         self.forces = []
 
-    def ODE(self, t, y, forces):
-        matrix_rot = (1 / self.mass) * R.from_euler('ZYX', [y[5], y[4], y[3]]).as_matrix()
-        matrix_trq = - (self.length/(2 * self.inertia)) * np.array(((0, 1, 0), (1, 0, 0), (0, 0, 0)))
+    @staticmethod
+    def ode(y, t, forces, mass, length, inertia):
+        matrix_rot = (1 / mass) * R.from_euler('ZYX', [y[5], y[4], y[3]]).as_matrix()
+        matrix_trq = - (length/(2 * inertia)) * np.array(((0, 1, 0), (1, 0, 0), (0, 0, 0)))
         A = np.vstack((matrix_rot, matrix_trq))
         dy_1dot = y[6:]
         dy_2dot = np.array((0., 0., -9.81, 0., 0., 0.)) + np.dot(A, forces)
-        return dy_1dot, dy_2dot
+        return [*dy_1dot, *dy_2dot]
 
     def F(self, forces, u_n):
         r = R.from_euler('ZYX', [u_n[5], u_n[4], u_n[3]])               # Roll, Pitch, Yaw
