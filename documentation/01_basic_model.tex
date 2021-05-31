@@ -8,9 +8,21 @@
         \alpha\\
         \beta\\
         \gamma\\
+        \dot{x}\\
+        \dot{y}\\
+        \dot{z}\\
+        \dot{\alpha}\\
+        \dot{\beta}\\
+        \dot{\gamma}\\
     \end{bmatrix}
     =
     \begin{bmatrix}
+        0\\
+        0\\
+        0\\
+        0\\
+        0\\
+        0\\
         0\\
         0\\
         -9.81\\
@@ -20,6 +32,42 @@
     \end{bmatrix}
     +
     \begin{bmatrix}
+        0&\dots&0&1&0&0&0&0&0\\
+        &&&&1&0&0&0&0\\
+        &&&&&1&0&0&0\\
+        &&&&&&1&0&0\\
+        &&&&&&&1&0\\
+        &&&&&&&&1\\
+        &&&&&&&&0\\
+        &&&&&&&&\\
+        &&&&&&&&\\
+        &&&&&&&&\\
+        &&&&&&&&\\
+        0&\dots&&&&&&&0\\
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        x\\
+        y\\
+        z\\
+        \alpha\\
+        \beta\\
+        \gamma\\
+        \dot{x}\\
+        \dot{y}\\
+        \dot{z}\\
+        \dot{\alpha}\\
+        \dot{\beta}\\
+        \dot{\gamma}\\
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 0\\
         \frac{a}{m} & \frac{b}{m} & \frac{c}{m}\\
         \frac{d}{m} & \frac{e}{m} & \frac{f}{m}\\
         \frac{g}{m} & \frac{h}{m} & \frac{i}{m}\\
@@ -29,9 +77,9 @@
     \end{bmatrix}
     \cdot
     \begin{bmatrix}
-        F_{x}\\
-        F_{y}\\
-        F_{z}\\
+        F_{x,R}\\
+        F_{y,R}\\
+        F_{z,R}\\
     \end{bmatrix}
 \end{equation*}
 
