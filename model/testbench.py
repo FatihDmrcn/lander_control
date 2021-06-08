@@ -16,6 +16,65 @@ def rocket_eq(t, y, _forces, _mass, _length, _inertia):
     return dy_dt
 
 
+KP = np.zeros((3, 12))
+KD = np.zeros((3, 12))
+KI = np.zeros((3, 12))
+
+KP[2, 2] = 100
+KI[2, 2] = .0
+KD[2, 2] = 3000
+
+KP[2, 8] = 150
+KI[2, 8] = 0
+KD[2, 8] = 100
+
+
+def pid_control(_y_desired, _y_actual):
+    error = _y_desired - _y_actual
+
+    _ep = error - pid_control.e['t-1']
+    _ei = error + pid_control.e['t-1']
+    _ed = error - 2 * pid_control.e['t-1'] + pid_control.e['t-2']
+
+    pid_control.e['t-2'] = pid_control.e['t-1']
+    pid_control.e['t-1'] = error
+
+    return np.dot(pid_control.K['P'], _ep) + np.dot(pid_control.K['I'], _ei) + np.dot(pid_control.K['D'], _ed)
+
+
+pid_control.K = {'P': KP, 'I': KI, 'D': KD}
+pid_control.e = {'t-1': 0., 't-2': 0.}
+
+
+# Trying the simple way
+mass = 20.
+length = 15.
+radius = 3.
+inertia = 0.25*mass*(radius**2 + (1/3)*length**2)
+forces = [0, 0, 190.]
+y0 = [0., 0., 300., 0., 0., 0., 0., 0., 0., 0., 0., 0.]
+y = y0
+y_d = np.zeros(12)
+
+
+y_log = []
+t_step = .01
+
+for t in range(5000):
+    y = y + t_step*rocket_eq(t, y, forces, mass, length, inertia)
+    forces = forces + pid_control(y_d, y)
+
+    y_log.append(y)
+    print(forces)
+
+y_log = np.asarray(y_log)
+plt.plot(y_log[:, 2])
+plt.grid(True)
+#plt.ylim((-10,400))
+plt.show()
+
+
+'''
 def touchdown(t, y, _forces, _mass, _length, _inertia): return y[2]
 touchdown.terminal = True
 touchdown.direction = -1
@@ -35,53 +94,4 @@ def solve_rocket_eq():
     plt.xlabel('t')
     plt.grid()
     plt.show()
-
-
-
-# Trying the simple way
-mass=20.
-length=15.
-radius=3.
-inertia = 0.25*mass*(radius**2 + (1/3)*length**2)
-forces = [0, 0, 190.]
-y0 = [0., 0., 300., 0., 0., 0., 0., 0., 0., 0., 0., 0.]
-y = y0
-y_d = np.zeros(6)
-
-e_error = np.zeros(6)
-e_prev_error_1 = np.zeros(6)
-e_prev_error_2 = np.zeros(6)
-
-KP = np.zeros((3, 6))
-KD = np.zeros((3, 6))
-KI = np.zeros((3, 6))
-
-KP[2, 2] = 19
-KI[2, 2] = .001
-KD[2, 2] = 4000
-
-y_log = []
-t_step = .01
-
-for t in range(5000):
-    y = y + t_step*rocket_eq(t, y, forces, mass, length, inertia)
-    y_log.append(y)
-    e_error = y_d - y[:6]
-
-    e_p = e_error-e_prev_error_1
-    e_i = e_error+e_prev_error_1
-    e_d = e_error-2*e_prev_error_1+e_prev_error_2
-
-    forces = forces + np.dot(KP, e_p) + np.dot(KI, e_i) + np.dot(KD, e_d)
-    print(forces)
-
-    e_prev_error_2 = e_prev_error_1
-    e_prev_error_1 = e_error
-
-
-y_log = np.asarray(y_log)
-plt.plot(y_log[:, 2])
-plt.grid(True)
-#plt.ylim((-10,400))
-plt.show()
-
+'''
