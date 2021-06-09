@@ -11,10 +11,10 @@ def pid_thrust(_force, _y_desired, _y_actual):
 
     if np.all(pid_thrust.e['t-2'] == 0):
         f[2] = 0
-    if f[2] < 0:
+    if f[2] < pid_thrust.min_thrust:
         f[2] = 0
-    if f[2] > 1000:
-        f[2] = 1000
+    if f[2] > pid_thrust.max_thrust:
+        f[2] = pid_thrust.max_thrust
 
     pid_thrust.e['t-2'] = pid_thrust.e['t-1']
     pid_thrust.e['t-1'] = error
@@ -22,8 +22,8 @@ def pid_thrust(_force, _y_desired, _y_actual):
 
 
 KP = np.zeros((3, 12))
-KD = np.zeros((3, 12))
 KI = np.zeros((3, 12))
+KD = np.zeros((3, 12))
 
 KP[2, 2] = 150
 KI[2, 2] = 0.1
@@ -33,5 +33,7 @@ KP[2, 8] = 100
 KI[2, 8] = .0
 KD[2, 8] = 15
 
+pid_thrust.min_thrust = 0
+pid_thrust.max_thrust = 1000
 pid_thrust.K = {'P': KP, 'I': KI, 'D': KD}
 pid_thrust.e = {'t-1': np.zeros(12), 't-2': np.zeros(12)}
