@@ -1,6 +1,7 @@
 import PyQt5.QtCore as Qtc
 import PyQt5.QtWidgets as Qtw
-from model import idgaf_model, gui_widget as gw
+import gui_widget as gw
+from idgaf.model import run
 
 
 class QThreadIntegrate(Qtc.QThread):
@@ -20,33 +21,24 @@ class MainClassAsGUI(Qtw.QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("You're my Baby!")
-        self.setSizePolicy(Qtw.QSizePolicy.Fixed, Qtw.QSizePolicy.Fixed)
+        #self.setSizePolicy(Qtw.QSizePolicy.Fixed, Qtw.QSizePolicy.Fixed)
+        self.y_log, self.f_log = run()
 
-        self.model = idgaf_model.IDGAF()
-        self.draw = gw.QDrawWidget(self.model)
-        self.thread = QThreadIntegrate(self.model)
-        self.model.steps.connect(self.draw.update_widget)
-        self.model.reset.connect(self.draw.reset)
-        self.reset()
-
-        self.button_start = Qtw.QPushButton('Start Baby!')
-        self.button_start.clicked.connect(self.start_simulation)
-        self.button_reset = Qtw.QPushButton('Redo this Baby!')
-        self.button_reset.clicked.connect(self.reset)
+        self.draw = gw.QDrawWidget(run.radius, run.length, run.y_initial)
+        self.slider = Qtw.QSlider(Qtc.Qt.Horizontal)
+        self.slider.setRange(0, len(self.y_log)-1)
+        self.slider.sliderMoved.connect(self.update_state)
 
         layout = Qtw.QVBoxLayout()
         layout.addWidget(self.draw)
-        layout.addWidget(self.button_start)
-        layout.addWidget(self.button_reset)
+        layout.addWidget(self.slider)
         self.setLayout(layout)
 
         self.show()
 
-    def start_simulation(self):
-        self.thread.start()
-
-    def reset(self):
-        self.model.randomize_ic()
+    def update_state(self):
+        pos = self.slider.value()
+        self.draw.update_widget(self.y_log[pos, :6], self.y_log[pos, 6:12], self.f_log[pos])
 
 
 if __name__ == "__main__":
