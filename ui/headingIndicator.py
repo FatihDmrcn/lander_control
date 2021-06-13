@@ -68,7 +68,7 @@ class NavigationDisplay(qtw.QWidget):
         clipPathHDG.addPolygon(qtg.QPolygonF(clipPathPoly))
         painterND.setClipPath(clipPathHDG)
         #Heading Circle
-        #headingCircle = qtc.QRectF(-r,-r,2*r,2*r)
+        #headingCircle = qtc.QRectF(-radius,-radius,2*radius,2*radius)
         #painterND.drawEllipse(headingCircle)
         #Heading Strokes and Angles
         hdg = np.linspace(1,36,num=36)

@@ -1,5 +1,7 @@
 from scipy.spatial.transform import Rotation as R
 import numpy as np
+# SELAM VE DUA LIPA
+# FIFTY-ONE-ERGS
 
 
 def rocket_eq(t, y, _forces, _mass, _length, _inertia):

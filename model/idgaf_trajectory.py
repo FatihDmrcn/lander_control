@@ -107,7 +107,7 @@ if __name__ == '__main__':
     tck, u, p, v = Trajectory.spline(position, vector, k=3, magnitude=40)
     u_fine = np.linspace(np.amin(p), np.amax(p), 100000)
     x_fine, y_fine, z_fine = interpolate.splev(u_fine, tck, ext=3)
-    ax.plot(x_fine, y_fine, z_fine, 'r')
+    ax.plot(x_fine, y_fine, z_fine, 'radius')
     ax.scatter(p[:, 0], p[:, 1], p[:, 2], color='k')
 
     for p, v in zip(position, vector):

@@ -1,11 +1,7 @@
-from .rocket_model import rocket_eq
-from .controller import pid_controller
+from rocket.rocket_model import rocket_eq
+from pid.controller import pid_controller
 import matplotlib.pyplot as plt
 import numpy as np
-
-
-def plot_telemetry():
-    pass
 
 
 def run():

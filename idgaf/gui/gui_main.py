@@ -1,7 +1,6 @@
 import PyQt5.QtCore as Qtc
 import PyQt5.QtWidgets as Qtw
-import gui_widget as gw
-from idgaf.model import run
+from .gui_display import QDisplay
 
 
 class QThreadIntegrate(Qtc.QThread):
@@ -18,13 +17,14 @@ class QThreadIntegrate(Qtc.QThread):
 
 class MainClassAsGUI(Qtw.QWidget):
 
-    def __init__(self):
+    def __init__(self, run):
         super().__init__()
         self.setWindowTitle("You're my Baby!")
         #self.setSizePolicy(Qtw.QSizePolicy.Fixed, Qtw.QSizePolicy.Fixed)
+        self.run = run
         self.y_log, self.f_log = run()
 
-        self.draw = gw.QDrawWidget(run.radius, run.length, run.y_initial)
+        self.draw = QDisplay(run.radius, run.length, run.y_initial)
         self.slider = Qtw.QSlider(Qtc.Qt.Horizontal)
         self.slider.setRange(0, len(self.y_log)-1)
         self.slider.sliderMoved.connect(self.update_state)
@@ -39,10 +39,3 @@ class MainClassAsGUI(Qtw.QWidget):
     def update_state(self):
         pos = self.slider.value()
         self.draw.update_widget(self.y_log[pos, :6], self.y_log[pos, 6:12], self.f_log[pos])
-
-
-if __name__ == "__main__":
-    app = Qtw.QApplication([])
-    gui = MainClassAsGUI()
-    gui.show()
-    app.exec_()
