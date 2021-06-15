@@ -56,4 +56,3 @@ if __name__ == '__main__':
     ax3.grid(True)
     ax3.legend()
     plt.show()
-
