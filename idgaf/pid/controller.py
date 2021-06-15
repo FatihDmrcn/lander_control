@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.spatial.transform import Rotation
 from .pid_thrust import pid_thrust
+from .pid_attitude import pid_attitude
 
 
 def lim_angle(_angle):
@@ -30,7 +31,13 @@ lim_thrust.max = 1000
 
 
 def pid_controller(_y_desired, _y_actual):
-    _d_alpha, _d_beta, _d_thrust = pid_thrust(_y_desired, _y_actual)
+    _d_alpha, _d_beta, _d_thrust = 0, 0, 0
+    # event for belly flop
+    # event for last approach (const. speed)
+    if _y_actual[2] > 1000:
+        _d_alpha, _d_beta, _d_thrust = pid_attitude(_y_desired, _y_actual)
+    if _y_actual[2] <= 1000:
+        _d_alpha, _d_beta, _d_thrust = pid_thrust(_y_desired, _y_actual)
 
     pid_controller.alpha += _d_alpha
     pid_controller.beta += _d_beta
@@ -45,6 +52,7 @@ def pid_controller(_y_desired, _y_actual):
     return np.dot(_rotation, np.array([0, 0, pid_controller.thrust]))
 
 
+pid_attitude.e = {'t-1': np.zeros(12), 't-2': np.zeros(12)}
 pid_controller.thrust = 0.
 pid_controller.alpha = 0.
 pid_controller.beta = 0.

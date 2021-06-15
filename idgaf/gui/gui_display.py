@@ -112,7 +112,7 @@ class QDisplay(Qtw.QWidget):
             painter.setBrush(brush)
 
             a = Qtc.QPointF(0., self.length / 2)
-            scale = 0.5
+            scale = 0.25
             b = Qtc.QPointF(-scale*self.forces[0], self.length / 2 + scale*self.forces[2])
             painter.drawLine(a, b)
             painter.restore()

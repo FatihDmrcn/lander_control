@@ -1,42 +1,61 @@
 import numpy as np
 
 
-def pid_attitude(_force, _y_desired, _y_actual):
+def lim_d_angle(_angle):
+    if _angle <= -lim_d_angle.limit:
+        return -lim_d_angle.limit
+    if _angle >= lim_d_angle.limit:
+        return lim_d_angle.limit
+    if -lim_d_angle.limit < _angle < lim_d_angle.limit:
+        return _angle
+
+
+lim_d_angle.limit = .0125 * np.pi
+
+
+def lim_d_thrust(_thrust):
+    if _thrust <= -lim_d_thrust.limit:
+        return -lim_d_thrust.limit
+    if _thrust >= lim_d_thrust.limit:
+        return lim_d_thrust.limit
+    if -lim_d_thrust.limit < _thrust < lim_d_thrust.limit:
+        return _thrust
+
+
+lim_d_thrust.limit = 10
+
+
+def pid_attitude(_y_desired, _y_actual):
     error = _y_desired - _y_actual
     _ep = error - pid_attitude.e['t-1']
     _ei = error + pid_attitude.e['t-1']
-    _ed = np.zeros(12)
-    if np.any(pid_attitude.e['t-2'] != 0):
-        _ed = error - 2 * pid_attitude.e['t-1'] + pid_attitude.e['t-2']
-    print(_ep[4], _ei[4], _ed[4])
-    _d_force = np.dot(pid_attitude.K['P'], _ep) + np.dot(pid_attitude.K['I'], _ei) + np.dot(pid_attitude.K['D'], _ed)
-    f = _force + _d_force
+    _ed = error - 2 * pid_attitude.e['t-1'] + pid_attitude.e['t-2']
+
+    _delta = np.dot(pid_attitude.KP, _ep) + np.dot(pid_attitude.KI, _ei) + np.dot(pid_attitude.KD, _ed)
+    _d_alpha = lim_d_angle(_delta[0])
+    _d_beta = lim_d_angle(_delta[1])
+    _d_thrust = lim_d_thrust(_delta[2])
 
     if np.all(pid_attitude.e['t-2'] == 0):
-        f[0] = 0
-    if f[0] < pid_attitude.min_thrust:
-        f[0] = pid_attitude.min_thrust
-    if f[0] > pid_attitude.max_thrust:
-        f[0] = pid_attitude.max_thrust
+        _d_alpha, _d_beta, _d_thrust = 0., 0., 0.
 
     pid_attitude.e['t-2'] = pid_attitude.e['t-1']
     pid_attitude.e['t-1'] = error
-    return f
+    return _d_alpha, _d_beta, _d_thrust
 
 
-KP_att = np.zeros((3, 12))
-KI_att = np.zeros((3, 12))
-KD_att = np.zeros((3, 12))
-
-KP_att[0, 4] = -100
-KI_att[0, 4] = -0.1
-KD_att[0, 4] = -10000
-
-KP_att[0, 10] = 0
-KI_att[0, 10] = 0
-KD_att[0, 10] = 0
-
-pid_attitude.min_thrust = -50
-pid_attitude.max_thrust = +50
-pid_attitude.K = {'P': KP_att, 'I': KI_att, 'D': KD_att}
 pid_attitude.e = {'t-1': np.zeros(12), 't-2': np.zeros(12)}
+pid_attitude.KP = np.zeros((3, 12))
+pid_attitude.KI = np.zeros((3, 12))
+pid_attitude.KD = np.zeros((3, 12))
+
+# Control Beta
+pid_attitude.KP[1][4] = -5
+pid_attitude.KI[1][4] = -0.008
+pid_attitude.KD[1][4] = -1000
+pid_attitude.KP[2][4] = 0
+pid_attitude.KI[2][4] = 0.010
+pid_attitude.KD[2][4] = 1000
+pid_attitude.KP[1][10] = 0
+pid_attitude.KI[1][10] = 0
+pid_attitude.KD[1][10] = 0
