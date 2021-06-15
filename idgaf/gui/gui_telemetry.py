@@ -6,7 +6,7 @@ from scipy.spatial.transform import Rotation as R
 
 def get_XYZ(angles):
     origin = np.array([0, 0, 0])
-    A = R.from_euler('ZYX', angles)
+    A = R.from_euler('YX', angles)
     length = R.apply(A, np.array([0, 0, 15]))
     radius = 2
     magnitude = norm(length)
@@ -25,7 +25,7 @@ def get_XYZ(angles):
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-X, Y, Z = get_XYZ(np.array([0,0,0.125*np.pi]))
+X, Y, Z = get_XYZ(np.array([0.125*np.pi, 0]))
 ax.plot_surface(X, Y, Z)
 ax.set_xlabel("x axis")
 ax.set_ylabel("y axis")
@@ -35,11 +35,4 @@ ax.set_xlim(-20, 20)
 ax.set_ylim(-20, 20)
 ax.set_zlim(-20, 20)
 
-# Hide grid lines
-ax.grid(False)
-
-# Hide axes ticks
-ax.set_xticks([])
-ax.set_yticks([])
-ax.set_zticks([])
 plt.show()

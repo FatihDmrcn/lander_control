@@ -71,7 +71,7 @@ class QDisplay(Qtw.QWidget):
 
     def draw_background(self, painter, pen, brush):
         painter.save()
-        painter.translate(0, self.cos[2])
+        painter.translate(-self.cos[0], self.cos[2])
         pen.setColor(self.transparent)
         painter.setPen(pen)
 
@@ -127,7 +127,7 @@ class QDisplay(Qtw.QWidget):
 
     def get_parameter_text(self):
         axis = ['X', 'Y', 'Z', 'A', 'B', 'C']
-        lines = '\t\tu_0dot\tu_1dot\n'
+        lines = '\t\t\tu_0dot\t\tu_1dot\n'
         for j, i in enumerate(range(len(axis)), 0):
             lines += axis[i]+'\t'+'{:+07.1f}|{:+07.1f}\n'.format(self.cos[i], self.vel[i])
         return lines

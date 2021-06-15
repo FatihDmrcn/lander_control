@@ -8,7 +8,7 @@ class MainClassAsGUI(Qtw.QWidget):
     def __init__(self, run):
         super().__init__()
         self.setWindowTitle("You're my Baby!")
-        #self.setSizePolicy(Qtw.QSizePolicy.Fixed, Qtw.QSizePolicy.Fixed)
+        self.setSizePolicy(Qtw.QSizePolicy.Fixed, Qtw.QSizePolicy.Fixed)
         self.run = run
         self.y_log, self.f_log = run()
 
@@ -35,7 +35,7 @@ class MainClassAsGUI(Qtw.QWidget):
         self.counter = 0
         self.slider.setDisabled(True)
         self.button.setDisabled(True)
-        self.timer.start(5)
+        self.timer.start(4)
 
     def animate(self):
         self.draw.update_widget(self.y_log[self.counter, :6], self.y_log[self.counter, 6:12], self.f_log[self.counter])

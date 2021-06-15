@@ -12,7 +12,7 @@ def run():
     _f_log = [forces]
 
     for t in range(run.t_total):
-        forces = pid_controller(forces, run.y_desired, y_actual)
+        forces = pid_controller(run.y_desired, y_actual)
         y_actual = y_actual + run.t_step * rocket_eq(t, y_actual, forces, run.mass, run.length, run.inertia)
         _y_log.append(y_actual)
         _f_log.append(forces)
@@ -40,17 +40,20 @@ if __name__ == '__main__':
 
     fig, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
     fig.suptitle('Aligning x-axis using sharex')
-    ax1.plot(run.t_axis, y_log[:, 2], label='alt')
+    # ax1.plot(run.t_axis, y_log[:, 2], label='alt')
     ax1.plot(run.t_axis, y_log[:, 4], label='alt')
     ax1.set_xlim(run.t_begin, run.t_end)
     ax1.grid(True)
+    ax1.legend()
 
-    ax2.plot(run.t_axis, y_log[:, 8], label='vel')
+    # ax2.plot(run.t_axis, y_log[:, 8], label='vel')
     ax2.plot(run.t_axis, y_log[:, 10], label='vel')
     ax2.grid(True)
+    ax2.legend()
 
-    ax3.plot(run.t_axis, f_log[:, 2], label='force')
+    # ax3.plot(run.t_axis, f_log[:, 2], label='force')
     ax3.plot(run.t_axis, f_log[:, 0], label='force')
     ax3.grid(True)
+    ax3.legend()
     plt.show()
 

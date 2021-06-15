@@ -1,55 +1,71 @@
 import numpy as np
 
 
-def pid_thrust(_force, _y_desired, _y_actual):
+def lim_d_angle(_angle):
+    if _angle <= -lim_d_angle.limit:
+        return -lim_d_angle.limit
+    if _angle >= lim_d_angle.limit:
+        return lim_d_angle.limit
+    if -lim_d_angle.limit < _angle < lim_d_angle.limit:
+        return _angle
+
+
+lim_d_angle.limit = .0125 * np.pi
+
+
+def lim_d_thrust(_thrust):
+    if _thrust <= -lim_d_thrust.limit:
+        return -lim_d_thrust.limit
+    if _thrust >= lim_d_thrust.limit:
+        return lim_d_thrust.limit
+    if -lim_d_thrust.limit < _thrust < lim_d_thrust.limit:
+        return _thrust
+
+
+lim_d_thrust.limit = 10
+
+
+def pid_thrust(_y_desired, _y_actual):
     error = _y_desired - _y_actual
     _ep = error - pid_thrust.e['t-1']
     _ei = error + pid_thrust.e['t-1']
     _ed = error - 2 * pid_thrust.e['t-1'] + pid_thrust.e['t-2']
-    _d_force = np.dot(pid_thrust.K['P'], _ep) + np.dot(pid_thrust.K['I'], _ei) + np.dot(pid_thrust.K['D'], _ed)
-    f = _force + _d_force
+
+    _delta = np.dot(pid_thrust.KP, _ep) + np.dot(pid_thrust.KI, _ei) + np.dot(pid_thrust.KD, _ed)
+    _d_alpha = lim_d_angle(_delta[0])
+    _d_beta = lim_d_angle(_delta[1])
+    _d_thrust = lim_d_thrust(_delta[2])
 
     if np.all(pid_thrust.e['t-2'] == 0):
-        f = np.zeros(3)
-    if f[2] < pid_thrust.min_thrust:
-        f[2] = 0
-    if f[2] > pid_thrust.max_thrust:
-        f[2] = pid_thrust.max_thrust
-    if f[0] < pid_thrust.min_thrust_X:
-        f[0] = pid_thrust.min_thrust_X
-    if f[0] > pid_thrust.max_thrust_X:
-        f[0] = pid_thrust.max_thrust_X
+        _d_alpha, _d_beta, _d_thrust = 0., 0., 0.
 
     pid_thrust.e['t-2'] = pid_thrust.e['t-1']
     pid_thrust.e['t-1'] = error
-    return f
+    return _d_alpha, _d_beta, _d_thrust
 
 
-KP_thr = np.zeros((3, 12))
-KI_thr = np.zeros((3, 12))
-KD_thr = np.zeros((3, 12))
-
-KP_thr[2, 2] = 150
-KI_thr[2, 2] = 0.1
-KD_thr[2, 2] = 3000
-
-KP_thr[2, 8] = 100
-KI_thr[2, 8] = .0
-KD_thr[2, 8] = 15
-
-KP_thr[0, 4] = -100
-KI_thr[0, 4] = -0.1
-KD_thr[0, 4] = -10000
-
-KP_thr[0, 10] = 0
-KI_thr[0, 10] = 0
-KD_thr[0, 10] = 0
-
-pid_thrust.min_thrust = 0
-pid_thrust.max_thrust = 1000
-pid_thrust.min_thrust_X = -50
-pid_thrust.max_thrust_X = +50
-pid_thrust.K = {'P': KP_thr, 'I': KI_thr, 'D': KD_thr}
 pid_thrust.e = {'t-1': np.zeros(12), 't-2': np.zeros(12)}
+pid_thrust.KP = np.zeros((3, 12))
+pid_thrust.KI = np.zeros((3, 12))
+pid_thrust.KD = np.zeros((3, 12))
 
+# Control Beta
+pid_thrust.KP[1][4] = -5
+pid_thrust.KI[1][4] = -0.008
+pid_thrust.KD[1][4] = -1000
+pid_thrust.KP[2][4] = 0
+pid_thrust.KI[2][4] = 0.010
+pid_thrust.KD[2][4] = 1000
+pid_thrust.KP[1][10] = 0
+pid_thrust.KI[1][10] = 0
+pid_thrust.KD[1][10] = 0
 
+'''
+# Control thrust
+pid_thrust.KP[2][2] = 150
+pid_thrust.KI[2][2] = 0.1
+pid_thrust.KD[2][2] = 3000
+pid_thrust.KP[2][8] = 100
+pid_thrust.KI[2][8] = 0.
+pid_thrust.KD[2][8] = 15
+'''
