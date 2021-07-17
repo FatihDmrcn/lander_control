@@ -60,7 +60,6 @@ pid_thrust.KP[1][10] = 0
 pid_thrust.KI[1][10] = 0
 pid_thrust.KD[1][10] = 0
 
-
 # Control thrust
 pid_thrust.KP[2][2] = 150
 pid_thrust.KI[2][2] = 0.1
@@ -68,4 +67,3 @@ pid_thrust.KD[2][2] = 3000
 pid_thrust.KP[2][8] = 100
 pid_thrust.KI[2][8] = 0.
 pid_thrust.KD[2][8] = 15
-

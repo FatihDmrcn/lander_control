@@ -12,6 +12,7 @@ class QDisplay(Qtw.QWidget):
     dark_red = Qtc.Qt.darkRed
     red = Qtc.Qt.red
     black = Qtc.Qt.black
+    white = Qtc.Qt.white
     transparent = Qtc.Qt.transparent
     font = Qtg.QFont("Console")
     font.setFixedPitch(True)
@@ -61,7 +62,7 @@ class QDisplay(Qtw.QWidget):
 
         painter.save()
         painter.translate(self.width()/2, self.height()/2)
-        painter.scale(4., 4.)
+        painter.scale(12., 12.)
         self.draw_background(painter, pen, brush)
         self.draw_rocket(painter, pen, brush)
         painter.restore()
@@ -93,8 +94,11 @@ class QDisplay(Qtw.QWidget):
         painter.save()
         painter.rotate(self.deg[1])
 
-        brush.setColor(self.black)
+        brush.setColor(self.white)
         painter.setBrush(brush)
+        pen.setColor(self.black)
+        pen.setWidthF(.25)
+        painter.setPen(pen)
 
         self.draw_thrust(painter, pen, brush)
         rocket_tube = Qtc.QRectF(-self.radius, -self.length / 2, self.radius * 2, self.length)
@@ -112,7 +116,7 @@ class QDisplay(Qtw.QWidget):
             painter.setBrush(brush)
 
             a = Qtc.QPointF(0., self.length / 2)
-            scale = 0.25
+            scale = 0.1
             b = Qtc.QPointF(-scale*self.forces[0], self.length / 2 + scale*self.forces[2])
             painter.drawLine(a, b)
             painter.restore()

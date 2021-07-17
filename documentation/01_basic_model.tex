@@ -1,6 +1,6 @@
 \section*{The Basic Model}
 \begin{equation*}
-    \frac{d^{2}}{dt^{2}}
+    \frac{d}{dt}
     \begin{bmatrix}
         x\\
         y\\
@@ -16,35 +16,35 @@
         \dot{\gamma}\\
     \end{bmatrix}
     =
-    \begin{bmatrix}
+    \begin{bNiceMatrix}[nullify-dots]
         0\\
-        0\\
-        0\\
-        0\\
-        0\\
-        0\\
-        0\\
+        \Vdots \\
+        \\
+        \\
+        \\
+        \\
+        \\
         0\\
         -9.81\\
         0\\
         0\\
         0\\
-    \end{bmatrix}
+    \end{bNiceMatrix}
     +
-    \begin{bmatrix}
-        0&\dots&0&1&0&0&0&0&0\\
-        &&&&1&0&0&0&0\\
-        &&&&&1&0&0&0\\
-        &&&&&&1&0&0\\
-        &&&&&&&1&0\\
-        &&&&&&&&1\\
-        &&&&&&&&0\\
-        &&&&&&&&\\
-        &&&&&&&&\\
-        &&&&&&&&\\
-        &&&&&&&&\\
-        0&\dots&&&&&&&0\\
-    \end{bmatrix}
+    \begin{bNiceMatrix}[nullify-dots]
+        0 & \Cdots &0&1&0&0&0&0&0 \\
+        \Vdots &&& \Ddots &1&0&0&0&0 \\
+        &&&&&1&0&0&0 \\
+        &&&&&&1&0&0 \\
+        &&&&&&&1&0 \\
+        &&&&&&&&1 \\
+        &&&&&&&& 0\\
+        &&&&&&&& \Vdots\\
+        & \\
+        & \\
+        & \\
+        0 & \Cdots &&&&&&& 0
+    \end{bNiceMatrix}
     \cdot
     \begin{bmatrix}
         x\\
@@ -61,25 +61,84 @@
         \dot{\gamma}\\
     \end{bmatrix}
     +
-    \begin{bmatrix}
-        0 & 0 & 0\\
-        0 & 0 & 0\\
-        0 & 0 & 0\\
-        0 & 0 & 0\\
-        0 & 0 & 0\\
-        0 & 0 & 0\\
-        \frac{a}{m} & \frac{b}{m} & \frac{c}{m}\\
-        \frac{d}{m} & \frac{e}{m} & \frac{f}{m}\\
-        \frac{g}{m} & \frac{h}{m} & \frac{i}{m}\\
-        0 & \frac{2}{I \cdot l} & 0\\
-        \frac{2}{I \cdot l} & 0 & 0\\
-        0 & 0 & 0\\
-    \end{bmatrix}
+    \begin{bNiceMatrix}
+        \Block{6-3}{\underline{\underline{0}}} && \\
+        && \\
+        & \hspace*{1cm} & \\
+        && \\
+        && \\
+        && \\
+        \hdottedline
+        \Block{3-3}{\underline{\underline{R}}} && \\
+        & \hspace*{1cm} & \\
+        && \\
+        \hdottedline
+        \Block{3-3}{\underline{\underline{I}}} && \\
+        & \hspace*{1cm} & \\
+        && \\
+    \end{bNiceMatrix}
     \cdot
     \begin{bmatrix}
         F_{x,R}\\
         F_{y,R}\\
         F_{z,R}\\
     \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+	\underline{\underline{I}}=
+	\begin{bNiceMatrix}[nullify-dots]
+	0 & \frac{l}{2 \cdot I} & 0\\
+	\frac{l}{2 \cdot I} & 0 & 0\\
+	0 & 0 & 0\\
+	\end{bNiceMatrix}
+\end{equation*}
+\begin{equation*}
+	\underline{\underline{R}}=
+	\underline{\underline{R}}(\alpha,\beta,\gamma)=
+	\begin{bNiceMatrix}
+	c(\gamma) & -s(\gamma) & 0\\
+	s(\gamma) & c(\gamma) & 0\\
+	0 & 0 & 1\\
+	\end{bNiceMatrix}
+	\begin{bNiceMatrix}
+	c(\beta) & 0 & s(\beta)\\
+	0 & 1 & 0\\
+	-s(\beta) & 0 & c(\beta)\\
+	\end{bNiceMatrix}
+	\begin{bNiceMatrix}
+	1 & 0 & 0\\
+	0 & c(\alpha) & -s(\alpha)\\
+	0 & s(\alpha) & c(\alpha)\\
+	\end{bNiceMatrix}
+\end{equation*}
+
+\begin{equation*}
+	\begin{bmatrix}
+        F_{x,R}\\
+        F_{y,R}\\
+        F_{z,R}\\
+    \end{bmatrix}
+    =
+    \underline{\underline{B}}(\alpha_{R}, \beta_{R}) \cdot
+	\begin{bmatrix}
+		0\\
+        0\\
+        F_{R, total}\\
+    \end{bmatrix}
+    \quad
+    \text{with}
+    \quad
+    \underline{\underline{B}}(\alpha_{R}, \beta_{R})=
+	\begin{bNiceMatrix}
+	c(\beta_{R}) & 0 & s(\beta_{R})\\
+	0 & 1 & 0\\
+	-s(\beta_{R}) & 0 & c(\beta_{R})\\
+	\end{bNiceMatrix}
+	\begin{bNiceMatrix}
+	1 & 0 & 0\\
+	0 & c(\alpha_{R}) & -s(\alpha_{R})\\
+	0 & s(\alpha_{R}) & c(\alpha_{R})\\
+	\end{bNiceMatrix}
 \end{equation*}
 

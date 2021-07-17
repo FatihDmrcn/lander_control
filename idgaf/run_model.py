@@ -21,12 +21,12 @@ def run():
 
 
 run.mass = 20.
-run.length = 15.
-run.radius = 3.
+run.length = 20.
+run.radius = 1.
 run.inertia = 0.25*run.mass*(run.radius**2 + (1/3)*run.length**2)
 run.y_desired = np.zeros(12)
 run.y_desired[2] = run.length/2.
-run.y_initial = [0., 0., 1500., 0., -np.pi, 0., 0., 0., -50., 0., 0., 0.]
+run.y_initial = [0., 0., 1500., 0., -0.5*np.pi, 0., 0., 0., -50., 0., 0., 0.]
 
 run.t_begin = 0
 run.t_step = .01

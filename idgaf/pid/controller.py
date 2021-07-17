@@ -30,8 +30,12 @@ lim_thrust.min = 0
 lim_thrust.max = 1000
 
 
+def event_control():
+    pass
+
+
 def pid_controller(_y_desired, _y_actual):
-    _d_alpha, _d_beta, _d_thrust = 0, 0, 0
+    _d_alpha, _d_beta, _d_thrust = float(), float, float()
     # event for belly flop
     # event for last approach (const. speed)
     if _y_actual[2] > 1000:
