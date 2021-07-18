@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.20)  27 MAY 2021 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.20)  18 JUL 2021 10:15
 entering extended mode
 **./main.tex
 (main.tex
@@ -353,29 +353,279 @@ Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \TX@cols=\count282
 \TX@ftn=\toks28
 )
-(C:/Users\fatih\Documents\GitHub\igneus\out\main.aux)
+(C:\Program Files\MiKTeX\tex/latex/nicematrix\nicematrix.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty
+(C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks29
+\pgfutil@tempdima=\dimen170
+\pgfutil@tempdimb=\dimen171
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common-lists.tex))
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box52
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks32
+))
+\pgf@x=\dimen172
+\pgf@y=\dimen173
+\pgf@xa=\dimen174
+\pgf@ya=\dimen175
+\pgf@xb=\dimen176
+\pgf@yb=\dimen177
+\pgf@xc=\dimen178
+\pgf@yc=\dimen179
+\pgf@xd=\dimen180
+\pgf@yd=\dimen181
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count283
+\c@pgf@countb=\count284
+\c@pgf@countc=\count285
+\c@pgf@countd=\count286
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
+\pgf@sys@id@count=\count287
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count288
+\pgfsyssoftpath@bigbuffer@items=\count289
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen182
+\pgfmath@count=\count290
+\pgfmath@box=\box53
+\pgfmath@toks=\toks36
+\pgfmath@stack@operand=\toks37
+\pgfmath@stack@operation=\toks38
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.co
+de.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.
+tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmeti
+cs.code.tex)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count291
+))
+(C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfint.code.tex)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen183
+\pgf@picmaxx=\dimen184
+\pgf@picminy=\dimen185
+\pgf@picmaxy=\dimen186
+\pgf@pathminx=\dimen187
+\pgf@pathmaxx=\dimen188
+\pgf@pathminy=\dimen189
+\pgf@pathmaxy=\dimen190
+\pgf@xx=\dimen191
+\pgf@xy=\dimen192
+\pgf@yx=\dimen193
+\pgf@yy=\dimen194
+\pgf@zx=\dimen195
+\pgf@zy=\dimen196
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.t
+ex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen197
+\pgf@path@lasty=\dimen198
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen199
+\pgf@shorten@start@additional=\dimen256
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box54
+\pgf@hbox=\box55
+\pgf@layerbox@main=\box56
+\pgf@picture@serial@count=\count292
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.te
+x
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen257
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code
+.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen258
+\pgf@pt@y=\dimen259
+\pgf@pt@temp=\dimen260
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.
+tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen261
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen262
+\pgf@sys@shading@range@num=\count293
+\pgf@shadingcount=\count294
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box57
+))
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.te
+x
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box58
+)
+(C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
+Package: l3keys2e 2021-05-07 LaTeX2e option processing using LaTeX3 keys
+)
+Package: nicematrix 2021/06/20 v5.16 Enhanced arrays with the help of PGF/TikZ
+\g__nicematrix_env_int=\count295
+\g__nicematrix_NiceMatrixBlock_int=\count296
+\l__nicematrix_columns_width_dim=\dimen263
+\g__nicematrix_row_total_int=\count297
+\g__nicematrix_col_total_int=\count298
+\g__nicematrix_blocks_wd_dim=\dimen264
+\g__nicematrix_blocks_ht_dim=\dimen265
+\g__nicematrix_blocks_dp_dim=\dimen266
+\l__nicematrix_tabular_width_dim=\dimen267
+\l__nicematrix_old_iRow_int=\count299
+\l__nicematrix_old_jCol_int=\count300
+\l__nicematrix_x_initial_dim=\dimen268
+\l__nicematrix_y_initial_dim=\dimen269
+\l__nicematrix_x_final_dim=\dimen270
+\l__nicematrix_y_final_dim=\dimen271
+\l_tmpc_dim=\dimen272
+\l_tmpd_dim=\dimen273
+\g__nicematrix_width_last_col_dim=\dimen274
+\g__nicematrix_width_first_col_dim=\dimen275
+\l__nicematrix_row_min_int=\count301
+\l__nicematrix_row_max_int=\count302
+\l__nicematrix_col_min_int=\count303
+\l__nicematrix_col_max_int=\count304
+\g__nicematrix_static_num_of_col_int=\count305
+\l__nicematrix_rounded_corners_dim=\dimen276
+\l__nicematrix_line_width_dim=\dimen277
+\g__nicematrix_block_box_int=\count306
+\l__nicematrix_submatrix_extra_height_dim=\dimen278
+\l__nicematrix_submatrix_left_xshift_dim=\dimen279
+\l__nicematrix_submatrix_right_xshift_dim=\dimen280
+\l__nicematrix_first_row_int=\count307
+\l__nicematrix_first_col_int=\count308
+\l__nicematrix_last_row_int=\count309
+\l__nicematrix_last_col_int=\count310
+\c@tabularnote=\count311
+\l__nicematrix_number_of_notes_int=\count312
+\l__nicematrix_cell_space_top_limit_dim=\dimen281
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen282
+\l__nicematrix_inter_dots_dim=\dimen283
+\l__nicematrix_xdots_shorten_dim=\dimen284
+\l__nicematrix_radius_dim=\dimen285
+\l__nicematrix_notes_above_space_dim=\dimen286
+\l__nicematrix_left_margin_dim=\dimen287
+\l__nicematrix_right_margin_dim=\dimen288
+\l__nicematrix_extra_left_margin_dim=\dimen289
+\l__nicematrix_extra_right_margin_dim=\dimen290
+\c__nicematrix_max_l_dim=\dimen291
+) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-
-(C:\Program Files\MiKTeX\tex/latex/ucs\ucsencs.def
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+ (C:\Program Files\MiKTeX\tex/latex/ucs\ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 *geometry* driver: auto-detecting
@@ -414,17 +664,17 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count283
-\scratchdimen=\dimen170
-\scratchbox=\box52
-\nofMPsegments=\count284
-\nofMParguments=\count285
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count286
-\MPscratchDim=\dimen171
-\MPnumerator=\count287
-\makeMPintoPDFobject=\count288
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count313
+\scratchdimen=\dimen292
+\scratchbox=\box59
+\nofMPsegments=\count314
+\nofMParguments=\count315
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count316
+\MPscratchDim=\dimen293
+\MPnumerator=\count317
+\makeMPintoPDFobject=\count318
+\everyMPtoPDFconversion=\toks40
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -433,7 +683,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 21.
+Package hyperref Info: Link coloring OFF on input line 23.
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -444,44 +694,66 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count289
+\c@section@level=\count319
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
 
-(C:/Users\fatih\Documents\GitHub\igneus\out\main.out)
-(C:/Users\fatih\Documents\GitHub\igneus\out\main.out)
-\@outlinefile=\write3
-\openout3 = `main.out'.
+(main.out) (main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
 
-
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (01_basic_model.tex)
+) (01_basic_model.tex
+\g__nicematrix_max_cell_width_dim=\dimen294
+\c@iRow=\count320
+\c@jCol=\count321
+\l__nicematrix_cell_box=\box60
+\l__nicematrix_the_array_box=\box61
+\l__nicematrix_left_delim_dim=\dimen295
+\l__nicematrix_right_delim_dim=\dimen296
+\g__nicematrix_dp_row_zero_dim=\dimen297
+\g__nicematrix_ht_row_zero_dim=\dimen298
+\g__nicematrix_ht_row_one_dim=\dimen299
+\g__nicematrix_dp_ante_last_row_dim=\dimen300
+\g__nicematrix_ht_last_row_dim=\dimen301
+\g__nicematrix_dp_last_row_dim=\dimen302
+\g__nicematrix_ddots_int=\count322
+\g__nicematrix_iddots_int=\count323
+\g__nicematrix_delta_x_one_dim=\dimen303
+\g__nicematrix_delta_y_one_dim=\dimen304
+\g__nicematrix_delta_x_two_dim=\dimen305
+\g__nicematrix_delta_y_two_dim=\dimen306
+\l__nicematrix_initial_i_int=\count324
+\l__nicematrix_initial_j_int=\count325
+\l__nicematrix_final_i_int=\count326
+\l__nicematrix_final_j_int=\count327
+\l__nicematrix_l_dim=\dimen307
+)
 [1
 
-{C:/Users/fatih/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-(C:/Users\fatih\Documents\GitHub\igneus\out\main.aux)
+{C:/Users/fatih/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10744 strings out of 479163
- 159055 string characters out of 2863916
- 775594 words of memory out of 3000000
- 28179 multiletter control sequences out of 15000+600000
+ 22274 strings out of 479163
+ 417871 string characters out of 2863916
+ 1143188 words of memory out of 3000000
+ 39536 multiletter control sequences out of 15000+600000
  410835 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,67p,333b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,17n,97p,453b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/typ
@@ -492,10 +764,9 @@ ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmsy8.pfb>
-Output written on C:/Users\fatih\Documents\GitHub\igneus\out\main.pdf (1 page, 
-115134 bytes).
+Output written on main.pdf (2 pages, 128790 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 65 PDF objects out of 1000 (max. 8388607)
+ 6 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
